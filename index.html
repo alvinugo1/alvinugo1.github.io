@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alvin Ugo-Mgbemene | Intelligent Systems & Semiconductor Engineering</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Alvin Ugo-Mgbemene – engineer working at the intersection of AI, semiconductor manufacturing, and intelligent systems.">
+  <style>
+    :root {
+      --bg: #05060a;
+      --bg-alt: #0b0d14;
+      --card: #11131b;
+      --accent: #e84b3c; /* subtle Stanford-ish red */
+      --accent-soft: rgba(232, 75, 60, 0.15);
+      --text-main: #f5f5f7;
+      --text-muted: #a0a4b8;
+      --border-subtle: #222534;
+      --max-width: 960px;
+      --radius-lg: 16px;
+      --radius-sm: 10px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #141621 0, #05060a 45%);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom,
+        rgba(5, 6, 10, 0.92),
+        rgba(5, 6, 10, 0.7),
+        transparent);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .nav-left span.name {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.18s ease-out;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding: 2rem 1.5rem 2.5rem;
+      border-radius: 24px;
+      background: radial-gradient(circle at top left, #1b1d2b 0, #05060a 60%);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      margin-top: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.3rem, 3.1vw, 2.9rem);
+      line-height: 1.1;
+      margin: 0 0 0.75rem;
+    }
+    .hero-title span {
+      color: var(--accent);
+    }
+    .hero-subtitle {
+      font-size: 1.0rem;
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.6rem;
+    }
+    .pill {
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.3rem 0.7rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: rgba(5, 6, 10, 0.7);
+    }
+    .pill strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-decoration: none;
+      transition: background 0.18s ease, transform 0.12s ease,
+                  border-color 0.18s ease, color 0.18s ease;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(232, 75, 60, 0.45);
+    }
+    .btn-primary:hover {
+      background: #f05b4c;
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-main);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      background: rgba(232, 75, 60, 0.15);
+      transform: translateY(-1px);
+    }
+
+    .hero-aside {
+      border-radius: 18px;
+      padding: 1.1rem 1rem;
+      background: linear-gradient(145deg, #101221, #070814);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .hero-aside h3 {
+      font-size: 0.9rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+    .hero-aside ul {
+      padding-left: 1.1rem;
+      margin: 0.4rem 0 0.4rem;
+    }
+    .hero-aside li {
+      margin-bottom: 0.25rem;
+    }
+    .hero-aside .tagline {
+      font-size: 0.78rem;
+      opacity: 0.9;
+      margin-top: 0.5rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .section-header h2 {
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    .section-header span {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .section-body {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.2rem 1.2rem 1.1rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
+      gap: 1.5rem;
+    }
+
+    .text-muted {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+    }
+    .chip {
+      border-radius: 999px;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    .project-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 0.95rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.9rem;
+    }
+    .project-title {
+      font-weight: 600;
+      font-size: 0.98rem;
+    }
+    .project-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.1rem;
+    }
+    .project-tag {
+      font-size: 0.72rem;
+      border-radius: 999px;
+      padding: 0.12rem 0.45rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+    }
+    .project-links {
+      margin-top: 0.1rem;
+      font-size: 0.8rem;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 0.8rem;
+      font-size: 0.9rem;
+    }
+    .exp-item h3 {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+    .exp-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .exp-bullets {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--text-muted);
+    }
+    .exp-bullets li {
+      margin-bottom: 0.25rem;
+    }
+
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem 2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 1.5rem 1.1rem 1.6rem;
+      }
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .project-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding-inline: 1rem;
+      }
+      .hero {
+        padding-inline: 1rem;
+      }
+      .section-body {
+        padding-inline: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="nav-left">
+        <span class="name">Alvin Ugo-Mgbemene</span>
+        <span>Intelligent Systems & Semiconductor Engineering</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#interests">Interests</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1 class="hero-title">
+          AI for <span>Semiconductor Systems</span>
+        </h1>
+        <p class="hero-subtitle">
+          I design and build tools that help fabs reason about wafer flows, inline data, and device parametrics —
+          combining software, data, and domain knowledge to make manufacturing more intelligent and explainable.
+        </p>
+
+        <div class="pill-row">
+          <div class="pill"><strong>Current focus:</strong> AI-driven root-cause analysis for yield & parametric drift</div>
+          <div class="pill">Semiconductor manufacturing</div>
+          <div class="pill">Causal & interpretable ML</div>
+          <div class="pill">Systems & automation</div>
+        </div>
+
+        <div class="hero-actions">
+          <!-- TODO: replace # with actual resume link -->
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">
+            Download Résumé
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/alvinugo1" target="_blank" rel="noopener">
+            GitHub Profile
+          </a>
+          <!-- TODO: replace # with real LinkedIn -->
+          <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-aside">
+        <h3>What I’m excited about</h3>
+        <ul>
+          <li>AI-native tooling for fabs: systems that see beyond dashboards and into causal structure.</li>
+          <li>Combining process knowledge with machine learning to diagnose “why” a metric moved.</li>
+          <li>Building interfaces engineers actually use: fast, reliable, and grounded in real constraints.</li>
+        </ul>
+        <p class="tagline">
+          I’m especially interested in graduate work that bridges <strong>AI, systems, and semiconductor manufacturing</strong>.
+        </p>
+      </aside>
+    </section>
+
+    <!-- ABOUT + INTERESTS -->
+    <section id="about" class="section">
+      <div class="section-header">
+        <h2>About</h2>
+      </div>
+      <div class="section-body two-col">
+        <div>
+          <p class="text-muted">
+            I’m an engineer working at the intersection of <strong>AI, semiconductor manufacturing, and intelligent systems</strong>.
+            At Texas Instruments, I’ve built internal tools that help process and test engineers understand how wafers move through complex flows,
+            how inline measurements evolve, and where hidden yield and parametric issues originate.
+          </p>
+          <p class="text-muted">
+            My work spans Python-based automation, GUI design, and analytics — from
+            interactive wafer-flow editors to early-warning analytics for device parametrics.
+            I enjoy taking messy, high-dimensional problems and turning them into tools
+            that are reliable enough that people forget how much is happening underneath.
+          </p>
+        </div>
+        <div>
+          <p class="text-muted">
+            Long-term, I want to help build <strong>AI-native semiconductor systems</strong>:
+            fabs where data, models, and domain knowledge are woven into the infrastructure itself —
+            not bolted on in one-off dashboards.
+          </p>
+          <div class="chips">
+            <div class="chip">Python · NumPy · pandas</div>
+            <div class="chip">scikit-learn</div>
+            <div class="chip">PySide6 / GUI tooling</div>
+            <div class="chip">Data visualization</div>
+            <div class="chip">Semiconductor process & test context</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests" class="section">
+      <div class="section-header">
+        <h2>Research & Technical Interests</h2>
+      </div>
+      <div class="section-body">
+        <ul class="text-muted">
+          <li><strong>AI for semiconductor manufacturing</strong> – root-cause analysis, yield and inline/parametric drift diagnostics.</li>
+          <li><strong>Causal & interpretable ML</strong> – moving beyond correlation-only dashboards toward systems that explain <em>why</em> metrics shift.</li>
+          <li><strong>Systems & automation</strong> – designing robust pipelines and interfaces that integrate data, models, and engineering workflows.</li>
+          <li><strong>Hybrid logic + learning</strong> – combining rule-based engineering priors with statistical models in production environments.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="section-header">
+        <h2>Selected Projects</h2>
+        <span>Open-source & sanitized internal work</span>
+      </div>
+      <div class="section-body">
+        <div class="project-grid">
+          <!-- CausalFlow -->
+          <article class="project-card">
+            <div class="project-title">CausalFlow – Intelligent RCA for Semiconductor Yield</div>
+            <div class="project-meta">Python · scikit-learn · NumPy · Matplotlib · NetworkX</div>
+            <p class="text-muted">
+              Prototype framework for root-cause analysis on synthetic wafer-level data (process, inline, yield).
+              Uses clustering and a precision-matrix “causal skeleton” to surface likely drivers of yield loss with
+              human-interpretable graphs and rankings.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">RCA</span>
+              <span class="project-tag">Clustering</span>
+              <span class="project-tag">Causal structure</span>
+            </div>
+            <div class="project-links">
+              <!-- TODO: replace # with GitHub repo link -->
+              <a href="#" target="_blank" rel="noopener">View notebook on GitHub →</a>
+            </div>
+          </article>
+
+          <!-- ParametricFlow -->
+          <article class="project-card">
+            <div class="project-title">ParametricFlow – Inline/Scribe-Line Parametric RCA</div>
+            <div class="project-meta">Python · ElasticNetCV · PCA · DBSCAN</div>
+            <p class="text-muted">
+              Extends RCA to device-level metrics like IOFF, BV, VT, and IDSAT.
+              Models relationships between process, inline metrology, and scribe-line parametrics
+              to identify which steps and features most strongly influence degraded device behavior.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Parametric test</span>
+              <span class="project-tag">Multivariate modeling</span>
+              <span class="project-tag">Semiconductor devices</span>
+            </div>
+            <div class="project-links">
+              <!-- TODO: replace # with GitHub repo link -->
+              <a href="#" target="_blank" rel="noopener">View notebook on GitHub →</a>
+            </div>
+          </article>
+
+          <!-- Streamlit RCA Tool -->
+          <article class="project-card">
+            <div class="project-title">Parametric RCA Explorer – Streamlit Tool</div>
+            <div class="project-meta">Python · Streamlit · scikit-learn</div>
+            <p class="text-muted">
+              Interactive app where engineers can upload inline/tool datasets and a per-wafer metric (e.g., IDSAT,
+              leakage, or yield) and receive correlations, partial correlations, driver rankings, and group-by
+              summaries across tools and steps.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Streamlit</span>
+              <span class="project-tag">Engineer-facing UX</span>
+              <span class="project-tag">Tool analytics</span>
+            </div>
+            <div class="project-links">
+              <!-- TODO: replace # with GitHub repo link -->
+              <a href="#" target="_blank" rel="noopener">View app code on GitHub →</a>
+            </div>
+          </article>
+
+          <!-- TI Automation (sanitized) -->
+          <article class="project-card">
+            <div class="project-title">Wafer-Flow Automation & Analytics (Texas Instruments)</div>
+            <div class="project-meta">Python · PySide6 · OracleDB · JSON</div>
+            <p class="text-muted">
+              Built internal tools (code not public) for interactive wafer-flow editing, JSON-driven recipe generation,
+              and exploratory analytics on defect and yield data. Adopted across multiple fabs and recognized in
+              internal 5S and technical-ladder reviews.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">GUI design</span>
+              <span class="project-tag">Manufacturing systems</span>
+              <span class="project-tag">Production tooling</span>
+            </div>
+            <div class="project-links">
+              <!-- Could link to a PDF/slide deck mockup if you ever make one -->
+              <span class="text-muted">Details available on request (sanitized for IP).</span>
+            </div>
+          </article>
+        </div>
+
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.06);margin:1.5rem 0;">
+
+        <p class="text-muted" style="margin-bottom:0.8rem;"><strong>Earlier projects (undergraduate):</strong></p>
+        <ul class="text-muted" style="margin-top:0.25rem;">
+          <li><strong>MCU LabKit (ECEN 215)</strong> – Designed the MCU subsystem and firmware for a low-cost measurement kit supporting UART, I²C, JTAG, and SPI.</li>
+          <li><strong>Seam-Carving Engine</strong> – Implemented content-aware image resizing in C++ to preserve important structures while shrinking images.</li>
+          <li><strong>String-Based Big-Integer Calculator</strong> – Built an arbitrary-precision calculator using string representations and custom arithmetic.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE (brief, high-level) -->
+    <section id="experience" class="section">
+      <div class="section-header">
+        <h2>Selected Experience</h2>
+      </div>
+      <div class="section-body">
+        <div class="experience-list">
+          <div class="exp-item">
+            <h3>Texas Instruments – Product / Systems Engineering</h3>
+            <div class="exp-meta">
+              Dallas, TX · Semiconductor Manufacturing & Automation
+            </div>
+            <ul class="exp-bullets">
+              <li>Designed Python-based tools to visualize wafer flows, generate recipes, and surface hidden defect / yield patterns for process engineers.</li>
+              <li>Prototyped analytics for spatial defect clustering and tool commonality, helping prioritize high-impact issues during fab ramp-up.</li>
+              <li>Collaborated with cross-functional teams (process, test, data infrastructure) to deploy automation that reduced manual effort and improved visibility into fab performance.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="section-header">
+        <h2>Contact</h2>
+      </div>
+      <div class="section-body">
+        <p class="text-muted">
+          I’m always happy to talk about AI for semiconductor manufacturing, intelligent systems, or project ideas that sit at the boundary between software, hardware, and data.
+        </p>
+        <p class="text-muted">
+          <strong>Email:</strong> <!-- TODO: put your preferred personal email here -->
+          <a href="mailto:your.email@example.com">your.email@example.com</a><br>
+          <strong>GitHub:</strong> <a href="https://github.com/alvinugo1" target="_blank" rel="noopener">github.com/alvinugo1</a><br>
+          <!-- TODO: replace # with LinkedIn -->
+          <strong>LinkedIn:</strong> <a href="#" target="_blank" rel="noopener">linkedin.com/in/AlvinUgoMgbemene</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Alvin Ugo-Mgbemene</span>
+    <span>Built for clarity, not flash — so reviewers can see how I think.</span>
+  </footer>
+
+  <script>
+    // Set year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
