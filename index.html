@@ -290,8 +290,27 @@
       padding: 0.95rem 1rem;
       display: flex;
       flex-direction: column;
-      gap: 0.35rem;
       font-size: 0.9rem;
+    }
+    .project-card:hover {
+      border-color: rgba(255,255,255,0.15);
+    }
+    .project-card > *:not(:last-child) {
+      margin-bottom: 0.35rem;
+    }
+    .project-ip-note {
+      margin-top: 0.6rem;
+      padding-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-style: italic;
+      border-top: 1px dashed var(--border-subtle);
+    }
+    .project-body{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
     }
     .project-title {
       font-weight: 600;
@@ -538,21 +557,22 @@
 
           <!-- ParametricFlow -->
           <article class="project-card">
-            <div class="project-title">ParametricFlow – Inline/Scribe-Line Parametric RCA</div>
-            <div class="project-meta">Python · ElasticNetCV · PCA · DBSCAN</div>
-            <p class="text-muted">
-              Extends RCA to device-level metrics like IOFF, BV, VT, and IDSAT.
-              Models relationships between process, inline metrology, and scribe-line parametrics
-              to identify which steps and features most strongly influence degraded device behavior.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Parametric test</span>
-              <span class="project-tag">Multivariate modeling</span>
-              <span class="project-tag">Semiconductor devices</span>
+            <div class="project-body">
+              <div class="project-title">ParametricFlow – Inline/Scribe-Line Parametric RCA</div>
+              <div class="project-meta">Python · ElasticNetCV · PCA · DBSCAN</div>
+              <p class="text-muted">
+                Extends RCA to device-level metrics like IOFF, BV, VT, and IDSAT.
+                Models relationships between process, inline metrology, and scribe-line parametrics
+                to identify which steps and features most strongly influence degraded device behavior.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Parametric test</span>
+                <span class="project-tag">Multivariate modeling</span>
+                <span class="project-tag">Semiconductor devices</span>
+              </div>
             </div>
-            <div class="project-links">
-              <!-- TODO: replace # with GitHub repo link -->
-              <span class="text-muted">Details available on request (sanitized for IP).</span>
+            <div class="project-ip-note">
+              Details available on request (sanitized for IP).
             </div>
           </article>
 
