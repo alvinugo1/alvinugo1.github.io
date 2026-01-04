@@ -291,9 +291,22 @@
       display: flex;
       flex-direction: column;
       font-size: 0.9rem;
+      transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.15s ease;
     }
-    .project-card:hover {
+    /*.project-card:hover {
       border-color: rgba(255,255,255,0.15);
+    }*/
+    .project-card:hover {
+        border-color: rgba(255, 255, 255, 0.18);
+        background: linear-gradient(
+          180deg,
+          rgba(255,255,255,0.02),
+          rgba(255,255,255,0)
+        );
+        transform: translateY(-2px);
     }
     .project-card > *:not(:last-child) {
       margin-bottom: 0.35rem;
@@ -534,24 +547,22 @@
         <div class="project-grid">
           <!-- CausalFlow -->
           <article class="project-card">
-            <div class="project-title">CausalFlow – Intelligent RCA for Semiconductor Yield</div>
-            <div class="project-meta">Python · scikit-learn · NumPy · Matplotlib · NetworkX</div>
-            <p class="text-muted">
-              Prototype framework for root-cause analysis on synthetic wafer-level data (process, inline, yield).
-              Uses clustering and a precision-matrix “causal skeleton” to surface likely drivers of yield loss with
-              human-interpretable graphs and rankings.
-            </p>
-            <p class="text-muted">
-
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">RCA</span>
-              <span class="project-tag">Clustering</span>
-              <span class="project-tag">Causal structure</span>
+            <div class="project-body">
+              <div class="project-title">CausalFlow – Intelligent RCA for Semiconductor Yield</div>
+              <div class="project-meta">Python · scikit-learn · NumPy · Matplotlib · NetworkX</div>
+              <p class="text-muted">
+                Prototype framework for root-cause analysis on synthetic wafer-level data (process, inline, yield).
+                Uses clustering and a precision-matrix “causal skeleton” to surface likely drivers of yield loss with
+                human-interpretable graphs and rankings.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">RCA</span>
+                <span class="project-tag">Clustering</span>
+                <span class="project-tag">Causal structure</span>
+              </div>
             </div>
-            <div class="project-links">
-              <!-- TODO: replace # with GitHub repo link -->
-              <span class="text-muted">Details available on request (sanitized for IP).</span>
+            <div class="project-ip-note">
+              Details available on request (sanitized for IP).
             </div>
           </article>
 
@@ -578,40 +589,43 @@
 
           <!-- Streamlit RCA Tool -->
           <article class="project-card">
-            <div class="project-title">Parametric RCA Explorer – Streamlit Tool</div>
-            <div class="project-meta">Python · Streamlit · scikit-learn</div>
-            <p class="text-muted">
-              Interactive app where engineers can upload inline/tool datasets and a per-wafer metric (e.g., IDSAT,
-              leakage, or yield) and receive correlations, partial correlations, driver rankings, and group-by
-              summaries across tools and steps.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Streamlit</span>
-              <span class="project-tag">Engineer-facing UX</span>
-              <span class="project-tag">Tool analytics</span>
+            <div class="project-body">
+              <div class="project-title">Parametric RCA Explorer – Streamlit Tool</div>
+              <div class="project-meta">Python · Streamlit · scikit-learn</div>
+              <p class="text-muted">
+                Interactive app where engineers can upload inline/tool datasets and a per-wafer metric (e.g., IDSAT,
+                leakage, or yield) and receive correlations, partial correlations, driver rankings, and group-by
+                summaries across tools and steps.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Streamlit</span>
+                <span class="project-tag">Engineer-facing UX</span>
+                <span class="project-tag">Tool analytics</span>
+              </div>
             </div>
-            <div class="project-links">
-              <!-- TODO: replace # with GitHub repo link -->
-              <span class="text-muted">Details available on request (sanitized for IP).</span>
+            <div class="project-ip-note">
+              Details available on request (sanitized for IP).
             </div>
           </article>
 
-          <!-- TI Automation (sanitized) -->
+          <!-- TI Automation -->
           <article class="project-card">
-            <div class="project-title">Wafer-Flow Automation & Analytics (Texas Instruments)</div>
-            <div class="project-meta">Python · PySide6 · OracleDB · JSON</div>
-            <p class="text-muted">
-              Built internal tools (code not public) for interactive wafer-flow editing, JSON-driven recipe generation,
-              and exploratory analytics on defect and yield data. Adopted across multiple fabs and recognized in
-              internal 5S and technical-ladder reviews.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">GUI design</span>
-              <span class="project-tag">Manufacturing systems</span>
-              <span class="project-tag">Production tooling</span>
+            <div class="project-body">
+              <div class="project-title">Wafer-Flow Automation & Analytics (Texas Instruments)</div>
+              <div class="project-meta">Python · PySide6 · OracleDB · JSON</div>
+              <p class="text-muted">
+                Built internal tools (code not public) for interactive wafer-flow editing, JSON-driven recipe generation,
+                and exploratory analytics on defect and yield data. Adopted across multiple fabs and recognized in
+                internal 5S and technical-ladder reviews.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">GUI design</span>
+                <span class="project-tag">Manufacturing systems</span>
+                <span class="project-tag">Production tooling</span>
+              </div>
             </div>
-            <div class="project-links">
-              <span class="text-muted"><strong>Details available on request (sanitized for IP).</strong></span>
+            <div class="project-ip-note">
+              Details available on request (sanitized for IP).
             </div>
           </article>
         </div>
